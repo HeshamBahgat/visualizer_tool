@@ -8,9 +8,9 @@ from splashScreen import SplashScreen
 
 ## ==> APP Functions
 from app_soring_functions import SortingAppFunctions
-#from app_tree_functions import TreeAppFunctions
+from app_tree_functions import TreeAppFunctions
 
-class MainWindowS(SortingAppFunctions):
+class MainWindowS(SortingAppFunctions, TreeAppFunctions):
     def __init__(self):
         super(MainWindowS, self).__init__()
 

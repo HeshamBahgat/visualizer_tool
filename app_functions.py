@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
 ## temp
-#from algo.binaryheap.postool import *
-#from algo.binaryheap.visualtool import *
+from algo.postool import *
+from algo.visualtool import *
 
 
 class AppFunctions(object):
