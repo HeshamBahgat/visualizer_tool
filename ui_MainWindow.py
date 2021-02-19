@@ -589,7 +589,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setSpacing(0)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.frame_input = QtWidgets.QFrame(self.frame_tree_controllers)
-        self.frame_input.setMaximumSize(QtCore.QSize(50, 25))
+        self.frame_input.setMaximumSize(QtCore.QSize(80, 25))
         self.frame_input.setStyleSheet("")
         self.frame_input.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_input.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -599,8 +599,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
         self.inputArr = QtWidgets.QPushButton(self.frame_input)
-        self.inputArr.setMaximumSize(QtCore.QSize(50, 25))
+        self.inputArr.setMaximumSize(QtCore.QSize(80, 25))
         self.inputArr.setStyleSheet("QPushButton {\n"
+"    color: rgb(255, 255, 255);\n"
 "    background-position: center;\n"
 "    background-repeat: no-reperat;\n"
 "    border: none;\n"
@@ -616,10 +617,6 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {    \n"
 "    background-color: rgb(85, 170, 255);\n"
 "}")
-        self.inputArr.setText("")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap(":/24x24/icons/24x24/cil-input.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.inputArr.setIcon(icon6)
         self.inputArr.setIconSize(QtCore.QSize(24, 24))
         self.inputArr.setObjectName("inputArr")
         self.verticalLayout_9.addWidget(self.inputArr)
@@ -819,6 +816,7 @@ class Ui_MainWindow(object):
         self.insert_ele.setMaximumSize(QtCore.QSize(50, 25))
         self.insert_ele.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
+        self.insert_ele.setAlignment(QtCore.Qt.AlignCenter)
         self.insert_ele.setObjectName("insert_ele")
         self.horizontalLayout_14.addWidget(self.insert_ele)
         self.verticalLayout_11.addWidget(self.frame_insert_ele, 0, QtCore.Qt.AlignLeft)
@@ -929,7 +927,7 @@ class Ui_MainWindow(object):
         self.frame_size_grip.setMaximumSize(QtCore.QSize(25, 25))
         self.frame_size_grip.setStyleSheet("\n"
 "    background-image: url(:/16x16/icons/16x16/cil-size-grip.png);\n"
-"    background-position: center;\n"
+"    background-position:  center;\n"
 "    background-repeat: no-reperat;\n"
 "    border: none;\n"
 "")
@@ -942,7 +940,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -970,6 +968,7 @@ class Ui_MainWindow(object):
         self.shuffle.setItemText(1, _translate("MainWindow", "reversed"))
         self.shuffle.setItemText(2, _translate("MainWindow", "few_unique"))
         self.shuffle.setItemText(3, _translate("MainWindow", "nearly_sorted"))
+        self.inputArr.setText(_translate("MainWindow", "Generate"))
         self.heapsort.setText(_translate("MainWindow", "HeapSort"))
         self.groupBigO.setTitle(_translate("MainWindow", "Build Heap"))
         self.logN.setText(_translate("MainWindow", "O(N Log N)"))
