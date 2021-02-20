@@ -1,6 +1,14 @@
-# visualizer_tool
+## visualizer_tool
 Visualize basic sorting and tree algorithms.
 
+## Library used ##
+You can either 
+
+1- install (PyQt5, matplotlib, numpy, random, copy, time) using --> pip3 install library-name
+  
+or
+  
+2- use  virtual enviroment
 
 virtualenv .venv
 
