@@ -9,7 +9,15 @@ source .venv/bin/activate
 pip3 install -r requirements.txt
 
 
+## Watch the whole app design build using PYQT5 ##
 
 
-Watch a Demo for Sorting feature 
+[![App Design](https://user-images.githubusercontent.com/40794066/108596174-0ddaf080-738c-11eb-9bba-c64d3416729b.jpg)](https://youtu.be/_oYzM921JDY)
+
+
+
+
+## Watch a Demo for Sorting feature ##
+
+
 [![Click to Watch!](https://user-images.githubusercontent.com/40794066/108501796-7e194180-72ba-11eb-93c1-c9079f25c99e.jpg)](https://youtu.be/oylDJ475vMg)
