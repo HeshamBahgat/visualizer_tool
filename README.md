@@ -17,7 +17,13 @@ pip3 install -r requirements.txt
 
 
 
-## Watch a Demo for Sorting feature ##
+## Watch a Demo for Sorting Visualization ##
 
 
 [![Click to Watch!](https://user-images.githubusercontent.com/40794066/108501796-7e194180-72ba-11eb-93c1-c9079f25c99e.jpg)](https://youtu.be/oylDJ475vMg)
+
+
+## Watch a Demo for Binary Heap Tree Visualization ##
+
+
+![Tree Demo](https://user-images.githubusercontent.com/40794066/108596679-49c38500-738f-11eb-80c6-ec5e298adcf3.jpg)
