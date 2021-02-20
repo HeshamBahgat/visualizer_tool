@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1073, 727)
+        MainWindow.resize(1079, 727)
         MainWindow.setMinimumSize(QtCore.QSize(900, 600))
         MainWindow.setStyleSheet("background-color: rgb(31, 62, 90);\n"
 "background-color: rgb(21, 43, 62);\n"
@@ -864,13 +864,95 @@ class Ui_MainWindow(object):
         self.page_about = QtWidgets.QWidget()
         self.page_about.setObjectName("page_about")
         self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.page_about)
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_10.setSpacing(0)
         self.verticalLayout_10.setObjectName("verticalLayout_10")
-        self.label_4 = QtWidgets.QLabel(self.page_about)
-        self.label_4.setStyleSheet("font: 81pt \"Cantarell\";\n"
+        self.frame_top_me = QtWidgets.QFrame(self.page_about)
+        self.frame_top_me.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame_top_me.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_top_me.setObjectName("frame_top_me")
+        self.label_about_me = QtWidgets.QLabel(self.frame_top_me)
+        self.label_about_me.setGeometry(QtCore.QRect(-2, 0, 1051, 669))
+        self.label_about_me.setStyleSheet("font: 81pt \"Cantarell\";\n"
 "color: rgb(252, 233, 79);")
-        self.label_4.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_4.setObjectName("label_4")
-        self.verticalLayout_10.addWidget(self.label_4)
+        self.label_about_me.setText("")
+        self.label_about_me.setTextFormat(QtCore.Qt.AutoText)
+        self.label_about_me.setPixmap(QtGui.QPixmap(":/background/icons/Web 1920 – 1.png"))
+        self.label_about_me.setScaledContents(True)
+        self.label_about_me.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_about_me.setObjectName("label_about_me")
+        self.commandLinkButton_youtube = QtWidgets.QCommandLinkButton(self.frame_top_me)
+        self.commandLinkButton_youtube.setGeometry(QtCore.QRect(80, 340, 180, 31))
+        self.commandLinkButton_youtube.setStyleSheet("QCommandLinkButton {    \n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    color: rgb(85, 170, 255);\n"
+"    border-radius: 5px;\n"
+"    padding: 5px;\n"
+"}\n"
+"QCommandLinkButton:hover {    \n"
+"    color: rgb(210, 210, 210);\n"
+"    background-color: rgb(183, 207, 240);\n"
+"}\n"
+"QCommandLinkButton:pressed {    \n"
+"    color: rgb(210, 210, 210);\n"
+"    background-color: rgb(183, 207, 200);\n"
+"}")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap(":/24x24/icons/24x24/cil-link.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.commandLinkButton_youtube.setIcon(icon6)
+        self.commandLinkButton_youtube.setObjectName("commandLinkButton_youtube")
+        self.commandLinkButton_linked = QtWidgets.QCommandLinkButton(self.frame_top_me)
+        self.commandLinkButton_linked.setGeometry(QtCore.QRect(80, 260, 180, 31))
+        self.commandLinkButton_linked.setStyleSheet("QCommandLinkButton {    \n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    color: rgb(85, 170, 255);\n"
+"    border-radius: 5px;\n"
+"    padding: 5px;\n"
+"}\n"
+"QCommandLinkButton:hover {    \n"
+"    color: rgb(210, 210, 210);\n"
+"    background-color: rgb(183, 207, 240);\n"
+"}\n"
+"QCommandLinkButton:pressed {    \n"
+"    color: rgb(210, 210, 210);\n"
+"    background-color: rgb(183, 207, 200);\n"
+"}")
+        self.commandLinkButton_linked.setIcon(icon6)
+        self.commandLinkButton_linked.setObjectName("commandLinkButton_linked")
+        self.commandLinkButton_github = QtWidgets.QCommandLinkButton(self.frame_top_me)
+        self.commandLinkButton_github.setGeometry(QtCore.QRect(80, 300, 171, 31))
+        self.commandLinkButton_github.setStyleSheet("QCommandLinkButton {    \n"
+"    background-color: rgba(255, 255, 255, 0);\n"
+"    color: rgb(85, 170, 255);\n"
+"    border-radius: 5px;\n"
+"    padding: 5px;\n"
+"}\n"
+"QCommandLinkButton:hover {    \n"
+"    color: rgb(210, 210, 210);\n"
+"    background-color: rgb(183, 207, 240);\n"
+"}\n"
+"QCommandLinkButton:pressed {    \n"
+"    color: rgb(210, 210, 210);\n"
+"    background-color: rgb(183, 207, 200);\n"
+"}")
+        self.commandLinkButton_github.setIcon(icon6)
+        self.commandLinkButton_github.setObjectName("commandLinkButton_github")
+        self.label = QtWidgets.QLabel(self.frame_top_me)
+        self.label.setGeometry(QtCore.QRect(107, 232, 191, 20))
+        self.label.setStyleSheet("color: rgb(85, 170, 255);\n"
+"font: 10pt \"Cantarell\";\n"
+"background-color: rgba(255, 255, 255, 0);")
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.frame_top_me)
+        self.label_2.setGeometry(QtCore.QRect(88, 232, 20, 15))
+        self.label_2.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
+        self.label_2.setText("")
+        self.label_2.setPixmap(QtGui.QPixmap(":/24x24/icons/24x24/cil-envelope-closed.png"))
+        self.label_2.setScaledContents(True)
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_10.addWidget(self.frame_top_me)
         self.stackedWidget.addWidget(self.page_about)
         self.verticalLayout_3.addWidget(self.stackedWidget)
         self.horizontalLayout.addWidget(self.frame_pages)
@@ -940,7 +1022,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(4)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -977,7 +1059,10 @@ class Ui_MainWindow(object):
         self.insertArray.setText(_translate("MainWindow", "Insert-Array"))
         self.insert_ele_button.setText(_translate("MainWindow", "Insert"))
         self.extract_ele_button.setText(_translate("MainWindow", "Extract"))
-        self.label_4.setText(_translate("MainWindow", "I Love You"))
+        self.commandLinkButton_youtube.setText(_translate("MainWindow", "https://www.youtube.com/channel/UC3OgvXzPdkUlEKcG5e-EWgA"))
+        self.commandLinkButton_linked.setText(_translate("MainWindow", "https://www.linkedin.com/in/hesham-bahgat-8b661088/"))
+        self.commandLinkButton_github.setText(_translate("MainWindow", "https://www.github.com/HeshamBahgat/"))
+        self.label.setText(_translate("MainWindow", "hesham_bahgat@outlook.com"))
         self.label_credits.setText(_translate("MainWindow", "Designed By: Hesham Bahgat"))
 import files_rc
 
