@@ -40,10 +40,13 @@ class BinaryHeap(object):
 
         self.root = 0
 
-    def insertON(self, arr):
+    def insertON(self, arr, HeapSort):
 
         for ele in arr:
             yield from self.insert_ele(ele)
+
+        if HeapSort == "HeapSort":
+            yield from self.heapSort()
 
     def insertEle(self, ele):
         ele = int(ele)

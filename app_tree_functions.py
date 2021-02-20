@@ -69,6 +69,13 @@ class TreeAppFunctions(MainWindow):
 
         #self.function.timerFunc(lambda: self._update_canvas("remove"), "dynamic_canvas_tree")
         self._timer = self.function.timerFunc(lambda: self._update_canvas("remove"), "dynamic_canvas_tree")
+
+        self.function.changeStyle(self.ui.heapsort, "rgb(53, 81, 106);", False)
+        self.function.changeStyle(self.ui.insertArray, "rgb(53, 81, 106);", False)
+
+        self.function.changeStyle(self.ui.insert_ele_button, "rgb(53, 81, 106);", False)
+        self.function.changeStyle(self.ui.extract_ele_button, "rgb(53, 81, 106);", False)
+
         self._timer.start()
 
     def insertElement(self):
@@ -135,13 +142,14 @@ class TreeAppFunctions(MainWindow):
         #except
 
         except StopIteration:
-            if self.heaptype == "build" or tag == "insert":
+            if self.heaptype == "build" or tag == "insert" or tag == "remove":
                 self.function.changeStyle(self.ui.heapsort, "rgb(15, 57, 112)", True)
                 self.function.changeStyle(self.ui.insert_ele_button, "rgb(15, 57, 112)", True)
                 self.function.changeStyle(self.ui.extract_ele_button, "rgb(15, 57, 112)", True)
                 self.heaptype = "heapsort"
             else:
                 #self.function.changeStyle(self.ui.heapsort, "rgb(53, 81, 106);", False)
+                #self.function.changeStyle(self.ui.insertArray, "rgb(53, 81, 106);", False)
                 pass
             self.function.changeStyle(self.ui.insertArray, "rgb(15, 57, 112)", True)
 
@@ -165,21 +173,20 @@ class TreeAppFunctions(MainWindow):
     # Build Data
     def type(self):
 
+        if self.ui.checkHeapSort.isChecked():
+            self.heaptype = "HeapSort"
+        else:
+            self.heaptype = "build"
 
         if self.bigO == "O(N)":
             self.bh = BinaryHeap()
-            self.heaptype = "build"
-            self.frames = self.bh.insertON(self.data)
+            self.frames = self.bh.insertON(self.data, self.heaptype)
 
         else:
-            if self.ui.checkHeapSort.isChecked():
-                self.heaptype = "HeapSort"
-            else:
-                self.heaptype = "build"
-            #self.frames = self.genFrames(self.data, self.heaptype)
-
             self.bh = BinaryHeap()
             self.frames = self.bh.buildHeap(self.data, self.heaptype)
+
+
 
 
     def inserArr(self):
