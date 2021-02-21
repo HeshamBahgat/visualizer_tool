@@ -16,6 +16,11 @@ source .venv/bin/activate
 
 pip3 install -r requirements.txt
 
+## Run The App ##
+
+python3 main.py
+
+
 
 ## Watch the whole app design build using PYQT5 ##
 
@@ -34,4 +39,4 @@ pip3 install -r requirements.txt
 ## Watch a Demo for Binary Heap Tree Visualization ##
 
 
-![Tree Demo](https://user-images.githubusercontent.com/40794066/108596679-49c38500-738f-11eb-80c6-ec5e298adcf3.jpg)
+[![Tree Demo](https://user-images.githubusercontent.com/40794066/108596679-49c38500-738f-11eb-80c6-ec5e298adcf3.jpg)](https://youtu.be/K0W08Dtk3Dw)
