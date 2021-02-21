@@ -30,7 +30,7 @@ class TreeAppFunctions(MainWindow):
 
         # SetUp Buttons
 
-        self._timer = self.function.timerFunc(lambda: self._update("build"), "dynamic_canvas_tree")
+        self._timer = self.function.timerFunc(lambda: self._update(), "dynamic_canvas_tree")
 
         self.buttons = [self.ui.pause_Tree, self.ui.play_Tree, self.ui.stop_Tree]
         self.function.controllers(self._timer, *self.buttons)
@@ -41,11 +41,12 @@ class TreeAppFunctions(MainWindow):
         self.ui.insertArray.clicked.connect(lambda: self.inserArr())
         self.function.changeStyle(self.ui.insertArray, "rgb(75, 100, 122)", False)
 
+        self.ui.play_Tree.clicked.connect(lambda: self._update())
 
-        self.ui.play_Tree.clicked.connect(lambda: self._timer.start())
         self.ui.heapsort.clicked.connect(lambda: self._update_canvas_heap())
         self.ui.insert_ele_button.clicked.connect(self.insertElement)
         self.ui.extract_ele_button.clicked.connect(self.removeElement)
+        self.ui.stop_Tree.clicked.connect(self.moreStop)
 
 
         self.function.changeStyle(self.ui.play_Tree, "rgb(75, 100, 122)", False)
@@ -53,12 +54,11 @@ class TreeAppFunctions(MainWindow):
         self.function.changeStyle(self.ui.insert_ele_button, "rgb(75, 100, 122)", False)
         self.function.changeStyle(self.ui.extract_ele_button, "rgb(75, 100, 122)", False)
 
-        #self.ui.oN.setChecked(True)
         self.ui.oN.toggled.connect(self.onradio)
         self.ui.logN.toggled.connect(self.onradio)
 
-
-
+    def moreStop(self):
+        self.function.changeStyle(self.ui.insertArray, "rgb(15, 57, 112)", True)
 
     def removeElement(self):
         self.frames = self.bh.removeroot()
@@ -67,7 +67,6 @@ class TreeAppFunctions(MainWindow):
         self.flag = True
         self.function.startStop(*self.buttons)
 
-        #self.function.timerFunc(lambda: self._update_canvas("remove"), "dynamic_canvas_tree")
         self._timer = self.function.timerFunc(lambda: self._update_canvas("remove"), "dynamic_canvas_tree")
 
         self.function.changeStyle(self.ui.heapsort, "rgb(53, 81, 106);", False)
@@ -91,7 +90,6 @@ class TreeAppFunctions(MainWindow):
         self.flag = True
         self.function.startStop(*self.buttons)
 
-        #self.function.timerFunc(lambda:  self._update_canvas("insert"), "dynamic_canvas_tree")
         self._timer = self.function.timerFunc(lambda: self._update_canvas("insert"), "dynamic_canvas_tree")
 
         self.function.changeStyle(self.ui.heapsort, "rgb(53, 81, 106);", False)
@@ -122,9 +120,11 @@ class TreeAppFunctions(MainWindow):
 
         self.function.changeStyle(self.ui.play_Tree, "rgb(53, 81, 106);", False)
 
-    def _update(self, tag):
+    def _update(self):
+
+        self._timer = self.function.timerFunc(lambda: self._update_canvas("build"), "dynamic_canvas_tree")
         self.function.changeStyle(self.ui.insertArray, "rgb(75, 100, 122)", False)
-        self._update_canvas(tag)
+        self._timer.start()
 
 
     def _update_canvas(self, tag):
@@ -148,8 +148,6 @@ class TreeAppFunctions(MainWindow):
                 self.function.changeStyle(self.ui.extract_ele_button, "rgb(15, 57, 112)", True)
                 self.heaptype = "heapsort"
             else:
-                #self.function.changeStyle(self.ui.heapsort, "rgb(53, 81, 106);", False)
-                #self.function.changeStyle(self.ui.insertArray, "rgb(53, 81, 106);", False)
                 pass
             self.function.changeStyle(self.ui.insertArray, "rgb(15, 57, 112)", True)
 
@@ -180,6 +178,7 @@ class TreeAppFunctions(MainWindow):
 
         if self.bigO == "O(N)":
             self.bh = BinaryHeap()
+            #self.heaptype = "build"
             self.frames = self.bh.insertON(self.data, self.heaptype)
 
         else:
